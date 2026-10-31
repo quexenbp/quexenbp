@@ -17,17 +17,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: stats cards
+        run: python3 stats.py ${{ github.repository_owner }} dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
             dist/github-snake.svg?color_snake=#e8b949&color_dots=#ebedf0,#ffd8a8,#ffa94d,#f76707,#d9480f
             dist/github-snake-dark.svg?palette=github-dark&color_snake=#e8b949&color_dots=#161b22,#5c2d0a,#9a4a10,#e8740f,#ff9a3c
-
-      - name: stats cards
-        run: python3 stats.py ${{ github.repository_owner }} dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: crazy-max/ghaction-github-pages@v4
         with:
