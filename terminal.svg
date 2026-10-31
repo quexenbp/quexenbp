@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14120e"/><stop offset=".6" stop-color="#0a0908"/><stop offset="1" stop-color="#1a150b"/>
+    </linearGradient>
+    <linearGradient id="silk" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e8b949"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff3c4"/><stop offset="1" stop-color="#c9952a"/>
+    </linearGradient>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity=".35"/></pattern>
+    <clipPath id="win"><rect width="1000" height="470" rx="14"/></clipPath>
+    <clipPath id="sc1"><rect x="0" y="162" width="1000" height="26"/></clipPath>
+    <clipPath id="sc2"><rect x="0" y="312" width="1000" height="18"/></clipPath>
+    <clipPath id="hc1"><rect x="0" y="86" width="1000" height="8"/></clipPath>
+    <clipPath id="hc2"><rect x="0" y="94" width="1000" height="8"/></clipPath>
+    <g id="spA" class="fa"><text font-size="11" xml:space="preserve"><tspan x="78" y="122">                                                00</tspan><tspan x="78" y="134">        1                                     11</tspan><tspan x="78" y="146">        011               0     0            11</tspan><tspan x="78" y="158">          00              10   10           01</tspan><tspan x="78" y="170">            01             0   0          01</tspan><tspan x="78" y="182">              01           11110        01</tspan><tspan x="78" y="194">     00101001   101       0<tspan class="eye">0</tspan><tspan class="eye">1</tspan>0<tspan class="eye">0</tspan><tspan class="eye">0</tspan>1      10</tspan><tspan x="78" y="206">   000      1101  001     1001010    11</tspan><tspan x="78" y="218">               100  1010   10100   10       1100101</tspan><tspan x="78" y="230">                 0011  0101110001111    10101      11011</tspan><tspan x="78" y="242">                    11011000111111110111</tspan><tspan x="78" y="254">                       1111000111001</tspan><tspan x="78" y="266">                      10101101011110010</tspan><tspan x="78" y="278">                  0111  00001011001   001011</tspan><tspan x="78" y="290">               0011   10100100111100       101001</tspan><tspan x="78" y="302">            1000    101100010001011010          0100</tspan><tspan x="78" y="314">          011     00 1111101111010110010           1010</tspan><tspan x="78" y="326">       100      010 000101100000010111110              1</tspan><tspan x="78" y="338">     010      10    0110001101110110101 000</tspan><tspan x="78" y="350">   011       1      1110010000011010110   00</tspan><tspan x="78" y="362">           00       1010101110100010001     10</tspan><tspan x="78" y="374">           0         00000001001000000       01</tspan><tspan x="78" y="386">         00           010111010010001         1</tspan><tspan x="78" y="398">        00               100001001             1</tspan><tspan x="78" y="410">        1                                       1</tspan><tspan x="78" y="422">                                                00</tspan><tspan x="78" y="434">                                                 00</tspan></text></g>
+    <g id="spB" class="fb"><text font-size="11" xml:space="preserve"><tspan x="78" y="122">         00</tspan><tspan x="78" y="134">           10                                     0</tspan><tspan x="78" y="146">            11            0     0               001</tspan><tspan x="78" y="158">             00           10   10              01</tspan><tspan x="78" y="170">               10          0   0             01</tspan><tspan x="78" y="182">                 10        11110           10</tspan><tspan x="78" y="194">                  10      0<tspan class="eye">0</tspan><tspan class="eye">1</tspan>0<tspan class="eye">0</tspan><tspan class="eye">0</tspan>1       010   10101111</tspan><tspan x="78" y="206">                    11    1001010     100  1001      001</tspan><tspan x="78" y="218">        0000101       10   10100   1011  001</tspan><tspan x="78" y="230">   01010      00000    0101110001111  1110</tspan><tspan x="78" y="242">                   01101100011111111011</tspan><tspan x="78" y="254">                       1111000111001</tspan><tspan x="78" y="266">                    01101011010111100</tspan><tspan x="78" y="278">               001011   00001011001  1001</tspan><tspan x="78" y="290">          110000       01001001111001   0011</tspan><tspan x="78" y="302">       1111          011000100010110100    1011</tspan><tspan x="78" y="314">    1101           0111111011110101100 01     000</tspan><tspan x="78" y="326">   0              010001011000000101111 011      110</tspan><tspan x="78" y="338">                000 0110001101110110101    10      011</tspan><tspan x="78" y="350">               00   1110010000011010110      0       100</tspan><tspan x="78" y="362">             00     1010101110100010001       00</tspan><tspan x="78" y="374">            00       00000001001000000         1</tspan><tspan x="78" y="386">            1         010111010010001           11</tspan><tspan x="78" y="398">           1             100001001               11</tspan><tspan x="78" y="410">          1                                       1</tspan><tspan x="78" y="422">         00</tspan><tspan x="78" y="434">        01</tspan></text></g>
+    <g id="spider"><use href="#spA"/><use href="#spB"/></g>
+    <text id="hey" x="520" y="100" font-size="16">Hey, quexenbp ✦</text>
+  </defs>
+
+  <style>
+    text { font-family: 'Cascadia Code', Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', monospace; }
+    .eye { fill: #ffcf4a; }
+    .fa { animation: fa .36s steps(1) infinite; }
+    .fb { animation: fb .36s steps(1) infinite; }
+    @keyframes fa { 0% { opacity: 1; } 50% { opacity: 0; } }
+    @keyframes fb { 0% { opacity: 0; } 50% { opacity: 1; } }
+    .crawl { transform-box: fill-box; transform-origin: center; animation: crawl 16s ease-in-out infinite; }
+    @keyframes crawl {
+      0%   { transform: translate(0,0) rotate(0deg); }
+      18%  { transform: translate(-40px,-4px) rotate(-18deg); }
+      30%  { transform: translate(-40px,-4px) rotate(-18deg); }
+      50%  { transform: translate(45px,4px) rotate(22deg); }
+      64%  { transform: translate(50px,16px) rotate(160deg); }
+      80%  { transform: translate(-10px,18px) rotate(200deg); }
+      100% { transform: translate(0,0) rotate(360deg); }
+    }
+    .cursor { animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .ga { fill: #ffffff; mix-blend-mode: screen; opacity: 0; animation: ga 5s steps(1) infinite; }
+    .gb { fill: #b8860b; mix-blend-mode: screen; opacity: 0; animation: gb 5s steps(1) infinite; }
+    @keyframes ga { 0%,100% { opacity: 0; transform: none; }
+      70% { opacity: .85; transform: translate(-5px,1px); } 71.5% { opacity: .85; transform: translate(4px,-1px); }
+      73% { opacity: 0; transform: none; } 88% { opacity: .85; transform: translate(6px,0); } 89% { opacity: 0; transform: none; } }
+    @keyframes gb { 0%,100% { opacity: 0; transform: none; }
+      70% { opacity: .85; transform: translate(5px,-1px); } 71.5% { opacity: .85; transform: translate(-3px,1px); }
+      73% { opacity: 0; transform: none; } 88% { opacity: .85; transform: translate(-6px,0); } 89% { opacity: 0; transform: none; } }
+    .s1 { opacity: 0; animation: s1 5s steps(1) infinite; }
+    .s2 { opacity: 0; animation: s2 5s steps(1) infinite; }
+    @keyframes s1 { 0%,100% { opacity: 0; transform: none; } 70.5% { opacity: 1; transform: translateX(14px); } 72% { opacity: 1; transform: translateX(-9px); } 73% { opacity: 0; transform: none; } }
+    @keyframes s2 { 0%,100% { opacity: 0; transform: none; } 71% { opacity: 1; transform: translateX(-16px); } 72.5% { opacity: 0; transform: none; } 88.5% { opacity: 1; transform: translateX(10px); } 89% { opacity: 0; transform: none; } }
+
+  </style>
+
+  <g clip-path="url(#win)">
+    <rect width="1000" height="470" fill="url(#bg)"/>
+
+    <rect width="1000" height="38" fill="#050505" opacity=".85"/>
+    <circle cx="22" cy="19" r="6" fill="#ff5f57"/><circle cx="42" cy="19" r="6" fill="#febc2e"/><circle cx="62" cy="19" r="6" fill="#28c840"/>
+    <text x="500" y="24" text-anchor="middle" font-size="13" fill="#8a857a">quexenbp@github: ~</text>
+    <text x="28" y="70" font-size="14" fill="#f2efe8"><tspan fill="#e8b949">❯</tspan> ./spider --wander</text>
+
+    <g class="crawl">
+      <use href="#spider" class="ga"/>
+      <use href="#spider" class="gb"/>
+      <use href="#spider" fill="url(#silk)"/>
+      <use href="#spider" fill="url(#silk)" class="s1" clip-path="url(#sc1)"/>
+      <use href="#spider" fill="url(#silk)" class="s2" clip-path="url(#sc2)"/>
+    </g>
+
+    <g font-weight="600">
+      <use href="#hey" class="ga"/>
+      <use href="#hey" class="gb"/>
+      <use href="#hey" fill="#ffffff"/>
+      <use href="#hey" fill="#ffffff" class="s1" clip-path="url(#hc1)"/>
+      <use href="#hey" fill="#ffffff" class="s2" clip-path="url(#hc2)"/>
+    </g>
+
+    <g fill="none" stroke="#e8b949" stroke-opacity=".55" stroke-width="1.2">
+      <path d="M690 124 H520 V276 H960 V124 H790"/>
+      <path d="M690 296 H520 V358 H960 V296 H790"/>
+    </g>
+    <text x="740" y="129" text-anchor="middle" font-size="13" fill="#e8b949">profile</text>
+    <text x="740" y="301" text-anchor="middle" font-size="13" fill="#e8b949">status</text>
+
+    <g font-size="14">
+      <text x="540" y="152"><tspan fill="#e8b949">├ FOCUS</tspan><tspan x="650" fill="#f2efe8">web · 3D · arduino · security</tspan></text>
+      <text x="540" y="174"><tspan fill="#e8b949">├ LANGS</tspan><tspan x="650" fill="#f2efe8">html · c++ · python · js</tspan></text>
+      <text x="540" y="196"><tspan fill="#e8b949">│</tspan><tspan x="650" fill="#f2efe8">rust · java · c#</tspan></text>
+      <text x="540" y="218"><tspan fill="#e8b949">├ TOOLS</tspan><tspan x="650" fill="#f2efe8">blender · figma · vscode · git</tspan></text>
+      <text x="540" y="240"><tspan fill="#e8b949">│</tspan><tspan x="650" fill="#f2efe8">burp suite · nmap · wireshark</tspan></text>
+      <text x="540" y="262"><tspan fill="#e8b949">└ ROLE</tspan><tspan x="650" fill="#f2efe8">3D artist · developer · security</tspan></text>
+      <text x="540" y="324"><tspan fill="#e8b949">├ CREATIVITY</tspan></text>
+      <text x="540" y="346"><tspan fill="#e8b949">└ CAFFEINE</tspan></text>
+      <text x="916" y="324" fill="#f2efe8">92%</text>
+      <text x="916" y="346" fill="#f2efe8">99%</text>
+    </g>
+    <rect x="650" y="314" width="250" height="10" rx="2" fill="#fff" opacity=".08"/>
+    <rect x="650" y="314" width="230" height="10" rx="2" fill="url(#bar)"/>
+    <rect x="650" y="336" width="250" height="10" rx="2" fill="#fff" opacity=".08"/>
+    <rect x="650" y="336" width="247" height="10" rx="2" fill="url(#bar)"/>
+
+    <g>
+      <circle cx="680" cy="388" r="5" fill="#ffffff"/><circle cx="700" cy="388" r="5" fill="#d9d4c7"/>
+      <circle cx="720" cy="388" r="5" fill="#8a857a"/><circle cx="740" cy="388" r="5" fill="#2a2620" stroke="#8a857a" stroke-opacity=".5"/>
+      <circle cx="760" cy="388" r="5" fill="#fff3c4"/><circle cx="780" cy="388" r="5" fill="#e8b949"/>
+      <circle cx="800" cy="388" r="5" fill="#b8860b"/>
+    </g>
+
+    <text x="28" y="440" font-size="14" fill="#e8b949">❯</text>
+    <rect class="cursor" x="46" y="428" width="9" height="16" fill="#f2efe8"/>
+
+    <rect width="1000" height="470" fill="url(#scan)"/>
+    <rect x=".6" y=".6" width="998.8" height="468.8" rx="14" fill="none" stroke="#e8b949" stroke-opacity=".25"/>
+  </g>
+</svg>
