@@ -44,16 +44,16 @@ Most of my projects start as a <i>"what if"</i> and end up half-finished but pre
 <h3 align="center">statistics</h3>
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=quexenbp&show_icons=true&count_private=true&include_all_commits=true&hide_border=true&bg_color=0d1117&title_color=e8b949&icon_color=e8b949&text_color=e6edf3&ring_color=e8b949" />
-  <img height="170" src="https://streak-stats.demolab.com?user=quexenbp&hide_border=true&background=0d1117&ring=e8b949&fire=e8b949&currStreakLabel=e8b949&sideLabels=e6edf3&currStreakNum=ffffff&sideNums=ffffff&dates=8b949e" />
+  <img height="160" src="https://raw.githubusercontent.com/quexenbp/quexenbp/output/stats.svg" />
+  <img height="160" src="https://streak-stats.demolab.com?user=quexenbp&hide_border=true&background=0d1117&ring=e8b949&fire=e8b949&currStreakLabel=e8b949&sideLabels=e6edf3&currStreakNum=ffffff&sideNums=ffffff&dates=8b949e" />
 </p>
 
 <p align="center">
-  <img width="60%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=quexenbp&layout=compact&hide_border=true&bg_color=0d1117&title_color=e8b949&text_color=e6edf3" />
+  <img width="60%" src="https://raw.githubusercontent.com/quexenbp/quexenbp/output/langs.svg" />
 </p>
 
 <p align="center">
-  <img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=quexenbp&bg_color=0d1117&color=e6edf3&line=e8b949&point=ffffff&area=true&area_color=e8b949&hide_border=true" />
+  <img width="100%" src="https://raw.githubusercontent.com/quexenbp/quexenbp/output/activity.svg" />
 </p>
 
 <picture>

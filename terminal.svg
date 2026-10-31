@@ -90,7 +90,7 @@
     <g font-size="14">
       <text x="540" y="152"><tspan fill="#e8b949">├ FOCUS</tspan><tspan x="650" fill="#f2efe8">web · 3D · arduino · security</tspan></text>
       <text x="540" y="174"><tspan fill="#e8b949">├ LANGS</tspan><tspan x="650" fill="#f2efe8">html · c++ · python · js</tspan></text>
-      <text x="540" y="196"><tspan fill="#e8b949">│</tspan><tspan x="650" fill="#f2efe8">rust · java · c#</tspan></text>
+      <text x="540" y="196"><tspan fill="#e8b949">│</tspan><tspan x="650" fill="#f2efe8">rust · java · c# · php</tspan></text>
       <text x="540" y="218"><tspan fill="#e8b949">├ TOOLS</tspan><tspan x="650" fill="#f2efe8">blender · figma · vscode · git</tspan></text>
       <text x="540" y="240"><tspan fill="#e8b949">│</tspan><tspan x="650" fill="#f2efe8">burp suite · nmap · wireshark</tspan></text>
       <text x="540" y="262"><tspan fill="#e8b949">└ ROLE</tspan><tspan x="650" fill="#f2efe8">3D artist · developer · security</tspan></text>
