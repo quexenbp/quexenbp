@@ -194,74 +194,112 @@ terminal = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" wi
 </svg>
 """
 
-# --- header: transparent binary -> name decode loop ---
-WORD, L = "QUEXENBP", 9.0            # loop length (s)
-LOCK0, LOCK_STEP, HOLD_END = 0.6, 0.16, 6.6
-TICK = 0.07
-brng = random.Random(3)
+# --- header: heart-shaped spider in 0/1 ---
+HEART = """
+            +
 
-def windows_css(name, wins):
-    """steps keyframes: visible only inside (a, b) windows"""
-    p = lambda t: f"{t / L * 100:.3f}%"
-    ks = ["0% { opacity: 0; }"]
-    for a, b in wins:
-        ks.append(f"{p(a)} {{ opacity: 1; }} {p(b)} {{ opacity: 0; }}")
-    ks.append("100% { opacity: 0; }")
-    return (f".{name} {{ opacity: 0; animation: {name} {L}s steps(1,end) infinite; }}\n"
-            f"@keyframes {name} {{ {' '.join(ks)} }}\n")
+                                +  ######++                  ++#####++ +
+        +                    ########+#+++++                +++++##########+
+        +++             #+########+++     ++++             +++     +++###+####+#              +++
+      +#++              #####+     #+       +              ++      +#     +#####              ++++
+      +###+             #####      +#+       ++++      ++++       +##      #####              ##++
+       ####              ####       ##         +++     +++        ##       ####+             ####+
+       ++###             +####      +#+        +++    +++        +##      #####       ++    ####+
+        ++###+    +++    +#####      ##         +#+   ##         +#      #####+    ++++    ####+
+         +####+   +++###    #####    ##+         ##  +#         ++#    +#####   +##+++   +####+
+     +     #####      +####  ######   #           #  ##          #+  +#####  +####       ####+
+            #####         ##+  #####+ #+          #  #           #  ######  ##+        +####
+             #####          +#  ######+           +  +            ######  ##          +####
+              +####+          ++  #######       ########    +   ######  ++           #####
+  + +           #######         ++ +#######+++#############++########  +         +######           + +
+  ++++           ###########        +##############################+  +     ###########           ++++
+   #+++             #############     +###########################     #############             +++++
+   +#+#+                #############+  ########################   #############                 ++##
+    ####+                   ################################################                    ####
+     #####+        +++++#+      +#######################################      +##++++        +#####
+      ########++++++++++########    ################################    +######++++++++++++#######+
+        #########+++               ++++##########################++++               ++++########
+         + ########+                     ######################                      ########++
+         +++++############################################################################+++++
+         ++#++  +#######################################################################   ++##
+        +##++      #####+       ++  + ############################+++ ++       +#####      ++##+
+         ++###      +                      ##################+                     ++     ###++
+           ####+    +                      ##################                      +     ####+
+            +###+   +                     ####################                     +   ####+
+              ####+ +                    #####+################++                  +  ####+
+               +####++                  #####  ##########+ #####+                 ++#####
+                 +####                 +####   ### ++ +###  #####                 +####+
+                   ####+               #####   +##    ###   +####               +####+
+                    +####+             ####+                 ####+             #####
+                      +####+           ####+                 ####           +#####
+                        ######         #####                 ####         +#####
+                          ######+      #####                 ####      ++#####
+                            ######     +####                #####     +#####
+                              ######   +####                #####   ######+
+                                +###########                #####+######+
+                                  ###########              +##########
+                                    ##########             #########
+                                       #######+           ########
+                                         #######         ######
+                                           ######      ######
+                                              ####+   ####+
+                                                +##   ##
+""".strip("\n").split("\n")
 
-def scramble(t0, t1, wins):
-    t = t0
-    while t < t1 - 1e-9:
-        g = brng.choice("01 ") if brng.random() < .15 else brng.choice("01")
-        if g != " ":
-            wins[g].append((t, min(t + TICK, t1)))
-        t += TICK
+HFS, HLH, HCW = 9, 9, 5.4      # font size, line height, approx char width
+HX, HY = 40, 34
+hrng = random.Random(11)
+HA = [[hrng.choice("01") for _ in range(120)] for _ in HEART]
+HB = [[(("1" if d == "0" else "0") if hrng.random() < .35 else d) for d in row] for row in HA]
 
-head_css, chars = "", ""
-for i, ch in enumerate(WORD):
-    x = 450 + (i - 3.5) * 74
-    lock = LOCK0 + i * LOCK_STEP
-    out = HOLD_END + 0.45 + i * 0.07
-    wins = {"0": [], "1": []}
-    scramble(0.15, lock, wins)
-    scramble(HOLD_END, out, wins)
-    for g, cls in (("0", f"z{i}"), ("1", f"o{i}")):
-        head_css += windows_css(cls, wins[g])
-        chars += f'<text class="{cls}" x="{x}" y="128" text-anchor="middle">{g}</text>'
-    head_css += windows_css(f"c{i}", [(lock, HOLD_END)])
-    chars += f'<text class="c{i}" x="{x}" y="128" text-anchor="middle">{ch}</text>'
+def heart_layer(digits, keep):
+    out = []
+    for r, line in enumerate(HEART):
+        s = "".join(digits[r][c] if ch == keep else " " for c, ch in enumerate(line)).rstrip()
+        if s:
+            out.append(f'<tspan x="{HX}" y="{HY + r * HLH}">{s}</tspan>')
+    return "".join(out)
 
-line_t = (LOCK0 + len(WORD) * LOCK_STEP + .1) / L * 100
-end_t = HOLD_END / L * 100
+def heart_frame(digits):
+    return (f'<text xml:space="preserve">{heart_layer(digits, "#")}</text>'
+            f'<text xml:space="preserve" opacity=".38">{heart_layer(digits, "+")}</text>')
 
-banner = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220">
+HW = 640
+HH = HY + len(HEART) * HLH + 46
+CXH, CYH = HW / 2, HY + len(HEART) * HLH / 2
+
+banner = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {HW} {HH}" width="{HW}" height="{HH}">
   <defs>
-    <linearGradient id="gold" x1="0" y1="60" x2="0" y2="140" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#fff3c4"/><stop offset=".55" stop-color="#e8b949"/><stop offset="1" stop-color="#a8741e"/>
+    <linearGradient id="gold" x1="0" y1="{HY}" x2="0" y2="{HY + len(HEART) * HLH}" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2cf6e"/><stop offset=".5" stop-color="#e0a93a"/><stop offset="1" stop-color="#a8701a"/>
     </linearGradient>
-    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#e8b949" stop-opacity="0"/><stop offset=".5" stop-color="#e8b949"/><stop offset="1" stop-color="#e8b949" stop-opacity="0"/>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
     </linearGradient>
-    <filter id="glow" x="-10%" y="-60%" width="120%" height="220%">
-      <feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <clipPath id="c1"><rect x="0" y="80" width="900" height="16"/></clipPath>
-    <clipPath id="c2"><rect x="0" y="108" width="900" height="12"/></clipPath>
-    <g id="nm" font-family="'Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="76" font-weight="700">{chars}</g>
+    <mask id="sweep" maskUnits="userSpaceOnUse" x="0" y="0" width="{HW}" height="{HH}">
+      <rect class="band" x="0" y="-90" width="{HW}" height="90" fill="url(#band)"/>
+    </mask>
+    <clipPath id="c1"><rect x="0" y="{HY + 120}" width="{HW}" height="22"/></clipPath>
+    <clipPath id="c2"><rect x="0" y="{HY + 300}" width="{HW}" height="16"/></clipPath>
+    <g id="hA" class="fa">{heart_frame(HA)}</g>
+    <g id="hB" class="fb">{heart_frame(HB)}</g>
+    <g id="heart" font-family="'Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="{HFS}" font-weight="700"><use href="#hA"/><use href="#hB"/></g>
   </defs>
   <style>
-{head_css}{GLITCH_CSS}
-    .rule {{ transform-box: fill-box; transform-origin: center; animation: rule {L}s cubic-bezier(.2,.7,.2,1) infinite; }}
-    @keyframes rule {{ 0%, {line_t:.2f}% {{ transform: scaleX(0); opacity: 0; }} {line_t + 6:.2f}% {{ transform: scaleX(1); opacity: 1; }}
-      {end_t - 2:.2f}% {{ transform: scaleX(1); opacity: 1; }} {end_t + 3:.2f}%, 100% {{ transform: scaleX(0); opacity: 0; }} }}
-    .sub {{ animation: sub {L}s ease-out infinite; }}
-    @keyframes sub {{ 0%, {line_t + 3:.2f}% {{ opacity: 0; }} {line_t + 10:.2f}% {{ opacity: .85; }} {end_t - 3:.2f}% {{ opacity: .85; }} {end_t:.2f}%, 100% {{ opacity: 0; }} }}
+    .fa {{ animation: fa .5s steps(1) infinite; }}
+    .fb {{ animation: fb .5s steps(1) infinite; }}
+    @keyframes fa {{ 0% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
+    @keyframes fb {{ 0% {{ opacity: 0; }} 50% {{ opacity: 1; }} }}
+    .beat {{ transform-origin: {CXH}px {CYH}px; animation: beat 2.2s ease-in-out infinite; }}
+    @keyframes beat {{ 0%, 40%, 100% {{ transform: scale(1); }} 10% {{ transform: scale(1.045); }} 20% {{ transform: scale(1); }} 30% {{ transform: scale(1.07); }} }}
+    .band {{ animation: band 4.5s cubic-bezier(.45,0,.55,1) infinite; }}
+    @keyframes band {{ 0% {{ transform: translateY(0); }} 70%, 100% {{ transform: translateY({HH + 180}px); }} }}
+{GLITCH_CSS}
   </style>
-  <g filter="url(#glow)">{glitch_stack("nm", "url(#gold)", "c1", "c2")}
+  <g class="beat">{glitch_stack("heart", "url(#gold)", "c1", "c2")}
+    <use href="#heart" fill="#ffffff" mask="url(#sweep)"/>
   </g>
-  <rect class="rule" x="150" y="154" width="600" height="1.5" fill="url(#rule)"/>
-  <text class="sub" x="450" y="186" text-anchor="middle" font-family="Consolas,Menlo,monospace" font-size="14" letter-spacing="8" fill="#b9a77e">3D ARTIST · DEVELOPER · SECURITY</text>
+  <text x="{CXH}" y="{HH - 14}" text-anchor="middle" font-family="Consolas,Menlo,monospace" font-size="13" letter-spacing="9" fill="#c9a24a">QUEXENBP</text>
 </svg>
 """
 
