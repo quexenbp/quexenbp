@@ -1,22 +1,68 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="50%" r="75%">
-      <stop offset="0" stop-color="#211a10"/><stop offset=".5" stop-color="#0e0b08"/><stop offset="1" stop-color="#050505"/>
-    </radialGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fff3c4"/><stop offset=".5" stop-color="#e8b949"/><stop offset="1" stop-color="#9c6b1c"/>
+    <linearGradient id="gold" x1="0" y1="60" x2="0" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff3c4"/><stop offset=".55" stop-color="#e8b949"/><stop offset="1" stop-color="#a8741e"/>
     </linearGradient>
-    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8b949" stop-opacity="0"/><stop offset=".5" stop-color="#e8b949"/><stop offset="1" stop-color="#e8b949" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-10%" y="-60%" width="120%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity=".4"/></pattern>
-    <clipPath id="frame"><rect width="1200" height="340" rx="22"/></clipPath>
-    <clipPath id="c1"><rect x="0" y="140" width="1200" height="20"/></clipPath>
-    <clipPath id="c2"><rect x="0" y="172" width="1200" height="14"/></clipPath>
-    <text id="nm" x="600" y="190" text-anchor="middle" font-family="'Cascadia Code',Consolas,'SF Mono',Menlo,monospace"
-          font-size="68" font-weight="700" letter-spacing="10">QUEXENBP</text>
+    <clipPath id="c1"><rect x="0" y="80" width="900" height="16"/></clipPath>
+    <clipPath id="c2"><rect x="0" y="108" width="900" height="12"/></clipPath>
+    <g id="nm" font-family="'Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="76" font-weight="700"><text class="z0" x="191.0" y="128" text-anchor="middle">0</text><text class="o0" x="191.0" y="128" text-anchor="middle">1</text><text class="c0" x="191.0" y="128" text-anchor="middle">Q</text><text class="z1" x="265.0" y="128" text-anchor="middle">0</text><text class="o1" x="265.0" y="128" text-anchor="middle">1</text><text class="c1" x="265.0" y="128" text-anchor="middle">U</text><text class="z2" x="339.0" y="128" text-anchor="middle">0</text><text class="o2" x="339.0" y="128" text-anchor="middle">1</text><text class="c2" x="339.0" y="128" text-anchor="middle">E</text><text class="z3" x="413.0" y="128" text-anchor="middle">0</text><text class="o3" x="413.0" y="128" text-anchor="middle">1</text><text class="c3" x="413.0" y="128" text-anchor="middle">X</text><text class="z4" x="487.0" y="128" text-anchor="middle">0</text><text class="o4" x="487.0" y="128" text-anchor="middle">1</text><text class="c4" x="487.0" y="128" text-anchor="middle">E</text><text class="z5" x="561.0" y="128" text-anchor="middle">0</text><text class="o5" x="561.0" y="128" text-anchor="middle">1</text><text class="c5" x="561.0" y="128" text-anchor="middle">N</text><text class="z6" x="635.0" y="128" text-anchor="middle">0</text><text class="o6" x="635.0" y="128" text-anchor="middle">1</text><text class="c6" x="635.0" y="128" text-anchor="middle">B</text><text class="z7" x="709.0" y="128" text-anchor="middle">0</text><text class="o7" x="709.0" y="128" text-anchor="middle">1</text><text class="c7" x="709.0" y="128" text-anchor="middle">P</text></g>
   </defs>
   <style>
+.z0 { opacity: 0; animation: z0 9.0s steps(1,end) infinite; }
+@keyframes z0 { 0% { opacity: 0; } 1.667% { opacity: 1; } 2.444% { opacity: 0; } 3.222% { opacity: 1; } 4.000% { opacity: 0; } 4.778% { opacity: 1; } 5.556% { opacity: 0; } 73.333% { opacity: 1; } 74.111% { opacity: 0; } 74.111% { opacity: 1; } 74.889% { opacity: 0; } 75.667% { opacity: 1; } 76.444% { opacity: 0; } 76.444% { opacity: 1; } 77.222% { opacity: 0; } 77.222% { opacity: 1; } 78.000% { opacity: 0; } 100% { opacity: 0; } }
+.o0 { opacity: 0; animation: o0 9.0s steps(1,end) infinite; }
+@keyframes o0 { 0% { opacity: 0; } 2.444% { opacity: 1; } 3.222% { opacity: 0; } 4.000% { opacity: 1; } 4.778% { opacity: 0; } 5.556% { opacity: 1; } 6.333% { opacity: 0; } 6.333% { opacity: 1; } 6.667% { opacity: 0; } 74.889% { opacity: 1; } 75.667% { opacity: 0; } 78.000% { opacity: 1; } 78.333% { opacity: 0; } 100% { opacity: 0; } }
+.c0 { opacity: 0; animation: c0 9.0s steps(1,end) infinite; }
+@keyframes c0 { 0% { opacity: 0; } 6.667% { opacity: 1; } 73.333% { opacity: 0; } 100% { opacity: 0; } }
+.z1 { opacity: 0; animation: z1 9.0s steps(1,end) infinite; }
+@keyframes z1 { 0% { opacity: 0; } 4.000% { opacity: 1; } 4.778% { opacity: 0; } 4.778% { opacity: 1; } 5.556% { opacity: 0; } 74.889% { opacity: 1; } 75.667% { opacity: 0; } 75.667% { opacity: 1; } 76.444% { opacity: 0; } 77.222% { opacity: 1; } 78.000% { opacity: 0; } 78.000% { opacity: 1; } 78.778% { opacity: 0; } 100% { opacity: 0; } }
+.o1 { opacity: 0; animation: o1 9.0s steps(1,end) infinite; }
+@keyframes o1 { 0% { opacity: 0; } 1.667% { opacity: 1; } 2.444% { opacity: 0; } 2.444% { opacity: 1; } 3.222% { opacity: 0; } 3.222% { opacity: 1; } 4.000% { opacity: 0; } 5.556% { opacity: 1; } 6.333% { opacity: 0; } 6.333% { opacity: 1; } 7.111% { opacity: 0; } 7.111% { opacity: 1; } 7.889% { opacity: 0; } 7.889% { opacity: 1; } 8.444% { opacity: 0; } 73.333% { opacity: 1; } 74.111% { opacity: 0; } 74.111% { opacity: 1; } 74.889% { opacity: 0; } 76.444% { opacity: 1; } 77.222% { opacity: 0; } 78.778% { opacity: 1; } 79.111% { opacity: 0; } 100% { opacity: 0; } }
+.c1 { opacity: 0; animation: c1 9.0s steps(1,end) infinite; }
+@keyframes c1 { 0% { opacity: 0; } 8.444% { opacity: 1; } 73.333% { opacity: 0; } 100% { opacity: 0; } }
+.z2 { opacity: 0; animation: z2 9.0s steps(1,end) infinite; }
+@keyframes z2 { 0% { opacity: 0; } 1.667% { opacity: 1; } 2.444% { opacity: 0; } 3.222% { opacity: 1; } 4.000% { opacity: 0; } 4.000% { opacity: 1; } 4.778% { opacity: 0; } 5.556% { opacity: 1; } 6.333% { opacity: 0; } 9.444% { opacity: 1; } 10.222% { opacity: 0; } 73.333% { opacity: 1; } 74.111% { opacity: 0; } 74.889% { opacity: 1; } 75.667% { opacity: 0; } 76.444% { opacity: 1; } 77.222% { opacity: 0; } 78.000% { opacity: 1; } 78.778% { opacity: 0; } 100% { opacity: 0; } }
+.o2 { opacity: 0; animation: o2 9.0s steps(1,end) infinite; }
+@keyframes o2 { 0% { opacity: 0; } 2.444% { opacity: 1; } 3.222% { opacity: 0; } 4.778% { opacity: 1; } 5.556% { opacity: 0; } 7.111% { opacity: 1; } 7.889% { opacity: 0; } 7.889% { opacity: 1; } 8.667% { opacity: 0; } 8.667% { opacity: 1; } 9.444% { opacity: 0; } 75.667% { opacity: 1; } 76.444% { opacity: 0; } 77.222% { opacity: 1; } 78.000% { opacity: 0; } 78.778% { opacity: 1; } 79.556% { opacity: 0; } 79.556% { opacity: 1; } 79.889% { opacity: 0; } 100% { opacity: 0; } }
+.c2 { opacity: 0; animation: c2 9.0s steps(1,end) infinite; }
+@keyframes c2 { 0% { opacity: 0; } 10.222% { opacity: 1; } 73.333% { opacity: 0; } 100% { opacity: 0; } }
+.z3 { opacity: 0; animation: z3 9.0s steps(1,end) infinite; }
+@keyframes z3 { 0% { opacity: 0; } 1.667% { opacity: 1; } 2.444% { opacity: 0; } 3.222% { opacity: 1; } 4.000% { opacity: 0; } 5.556% { opacity: 1; } 6.333% { opacity: 0; } 7.889% { opacity: 1; } 8.667% { opacity: 0; } 11.778% { opacity: 1; } 12.000% { opacity: 0; } 73.333% { opacity: 1; } 74.111% { opacity: 0; } 76.444% { opacity: 1; } 77.222% { opacity: 0; } 79.556% { opacity: 1; } 80.333% { opacity: 0; } 80.333% { opacity: 1; } 80.667% { opacity: 0; } 100% { opacity: 0; } }
+.o3 { opacity: 0; animation: o3 9.0s steps(1,end) infinite; }
+@keyframes o3 { 0% { opacity: 0; } 2.444% { opacity: 1; } 3.222% { opacity: 0; } 4.000% { opacity: 1; } 4.778% { opacity: 0; } 4.778% { opacity: 1; } 5.556% { opacity: 0; } 6.333% { opacity: 1; } 7.111% { opacity: 0; } 9.444% { opacity: 1; } 10.222% { opacity: 0; } 10.222% { opacity: 1; } 11.000% { opacity: 0; } 11.000% { opacity: 1; } 11.778% { opacity: 0; } 74.111% { opacity: 1; } 74.889% { opacity: 0; } 74.889% { opacity: 1; } 75.667% { opacity: 0; } 75.667% { opacity: 1; } 76.444% { opacity: 0; } 77.222% { opacity: 1; } 78.000% { opacity: 0; } 78.000% { opacity: 1; } 78.778% { opacity: 0; } 78.778% { opacity: 1; } 79.556% { opacity: 0; } 100% { opacity: 0; } }
+.c3 { opacity: 0; animation: c3 9.0s steps(1,end) infinite; }
+@keyframes c3 { 0% { opacity: 0; } 12.000% { opacity: 1; } 73.333% { opacity: 0; } 100% { opacity: 0; } }
+.z4 { opacity: 0; animation: z4 9.0s steps(1,end) infinite; }
+@keyframes z4 { 0% { opacity: 0; } 1.667% { opacity: 1; } 2.444% { opacity: 0; } 3.222% { opacity: 1; } 4.000% { opacity: 0; } 4.000% { opacity: 1; } 4.778% { opacity: 0; } 5.556% { opacity: 1; } 6.333% { opacity: 0; } 6.333% { opacity: 1; } 7.111% { opacity: 0; } 8.667% { opacity: 1; } 9.444% { opacity: 0; } 9.444% { opacity: 1; } 10.222% { opacity: 0; } 10.222% { opacity: 1; } 11.000% { opacity: 0; } 11.778% { opacity: 1; } 12.556% { opacity: 0; } 76.444% { opacity: 1; } 77.222% { opacity: 0; } 78.000% { opacity: 1; } 78.778% { opacity: 0; } 80.333% { opacity: 1; } 81.111% { opacity: 0; } 100% { opacity: 0; } }
+.o4 { opacity: 0; animation: o4 9.0s steps(1,end) infinite; }
+@keyframes o4 { 0% { opacity: 0; } 2.444% { opacity: 1; } 3.222% { opacity: 0; } 4.778% { opacity: 1; } 5.556% { opacity: 0; } 7.889% { opacity: 1; } 8.667% { opacity: 0; } 11.000% { opacity: 1; } 11.778% { opacity: 0; } 12.556% { opacity: 1; } 13.333% { opacity: 0; } 13.333% { opacity: 1; } 13.778% { opacity: 0; } 73.333% { opacity: 1; } 74.111% { opacity: 0; } 74.111% { opacity: 1; } 74.889% { opacity: 0; } 74.889% { opacity: 1; } 75.667% { opacity: 0; } 75.667% { opacity: 1; } 76.444% { opacity: 0; } 77.222% { opacity: 1; } 78.000% { opacity: 0; } 78.778% { opacity: 1; } 79.556% { opacity: 0; } 79.556% { opacity: 1; } 80.333% { opacity: 0; } 81.111% { opacity: 1; } 81.444% { opacity: 0; } 100% { opacity: 0; } }
+.c4 { opacity: 0; animation: c4 9.0s steps(1,end) infinite; }
+@keyframes c4 { 0% { opacity: 0; } 13.778% { opacity: 1; } 73.333% { opacity: 0; } 100% { opacity: 0; } }
+.z5 { opacity: 0; animation: z5 9.0s steps(1,end) infinite; }
+@keyframes z5 { 0% { opacity: 0; } 1.667% { opacity: 1; } 2.444% { opacity: 0; } 3.222% { opacity: 1; } 4.000% { opacity: 0; } 4.778% { opacity: 1; } 5.556% { opacity: 0; } 5.556% { opacity: 1; } 6.333% { opacity: 0; } 7.111% { opacity: 1; } 7.889% { opacity: 0; } 9.444% { opacity: 1; } 10.222% { opacity: 0; } 11.000% { opacity: 1; } 11.778% { opacity: 0; } 11.778% { opacity: 1; } 12.556% { opacity: 0; } 12.556% { opacity: 1; } 13.333% { opacity: 0; } 14.111% { opacity: 1; } 14.889% { opacity: 0; } 14.889% { opacity: 1; } 15.556% { opacity: 0; } 76.444% { opacity: 1; } 77.222% { opacity: 0; } 77.222% { opacity: 1; } 78.000% { opacity: 0; } 78.000% { opacity: 1; } 78.778% { opacity: 0; } 78.778% { opacity: 1; } 79.556% { opacity: 0; } 79.556% { opacity: 1; } 80.333% { opacity: 0; } 100% { opacity: 0; } }
+.o5 { opacity: 0; animation: o5 9.0s steps(1,end) infinite; }
+@keyframes o5 { 0% { opacity: 0; } 4.000% { opacity: 1; } 4.778% { opacity: 0; } 6.333% { opacity: 1; } 7.111% { opacity: 0; } 7.889% { opacity: 1; } 8.667% { opacity: 0; } 10.222% { opacity: 1; } 11.000% { opacity: 0; } 13.333% { opacity: 1; } 14.111% { opacity: 0; } 73.333% { opacity: 1; } 74.111% { opacity: 0; } 74.111% { opacity: 1; } 74.889% { opacity: 0; } 74.889% { opacity: 1; } 75.667% { opacity: 0; } 75.667% { opacity: 1; } 76.444% { opacity: 0; } 80.333% { opacity: 1; } 81.111% { opacity: 0; } 81.111% { opacity: 1; } 81.889% { opacity: 0; } 81.889% { opacity: 1; } 82.222% { opacity: 0; } 100% { opacity: 0; } }
+.c5 { opacity: 0; animation: c5 9.0s steps(1,end) infinite; }
+@keyframes c5 { 0% { opacity: 0; } 15.556% { opacity: 1; } 73.333% { opacity: 0; } 100% { opacity: 0; } }
+.z6 { opacity: 0; animation: z6 9.0s steps(1,end) infinite; }
+@keyframes z6 { 0% { opacity: 0; } 2.444% { opacity: 1; } 3.222% { opacity: 0; } 5.556% { opacity: 1; } 6.333% { opacity: 0; } 6.333% { opacity: 1; } 7.111% { opacity: 0; } 7.889% { opacity: 1; } 8.667% { opacity: 0; } 11.778% { opacity: 1; } 12.556% { opacity: 0; } 13.333% { opacity: 1; } 14.111% { opacity: 0; } 14.111% { opacity: 1; } 14.889% { opacity: 0; } 14.889% { opacity: 1; } 15.667% { opacity: 0; } 75.667% { opacity: 1; } 76.444% { opacity: 0; } 76.444% { opacity: 1; } 77.222% { opacity: 0; } 77.222% { opacity: 1; } 78.000% { opacity: 0; } 78.000% { opacity: 1; } 78.778% { opacity: 0; } 78.778% { opacity: 1; } 79.556% { opacity: 0; } 80.333% { opacity: 1; } 81.111% { opacity: 0; } 81.111% { opacity: 1; } 81.889% { opacity: 0; } 81.889% { opacity: 1; } 82.667% { opacity: 0; } 100% { opacity: 0; } }
+.o6 { opacity: 0; animation: o6 9.0s steps(1,end) infinite; }
+@keyframes o6 { 0% { opacity: 0; } 1.667% { opacity: 1; } 2.444% { opacity: 0; } 3.222% { opacity: 1; } 4.000% { opacity: 0; } 7.111% { opacity: 1; } 7.889% { opacity: 0; } 8.667% { opacity: 1; } 9.444% { opacity: 0; } 10.222% { opacity: 1; } 11.000% { opacity: 0; } 11.000% { opacity: 1; } 11.778% { opacity: 0; } 12.556% { opacity: 1; } 13.333% { opacity: 0; } 15.667% { opacity: 1; } 16.444% { opacity: 0; } 16.444% { opacity: 1; } 17.222% { opacity: 0; } 74.111% { opacity: 1; } 74.889% { opacity: 0; } 74.889% { opacity: 1; } 75.667% { opacity: 0; } 79.556% { opacity: 1; } 80.333% { opacity: 0; } 82.667% { opacity: 1; } 83.000% { opacity: 0; } 100% { opacity: 0; } }
+.c6 { opacity: 0; animation: c6 9.0s steps(1,end) infinite; }
+@keyframes c6 { 0% { opacity: 0; } 17.333% { opacity: 1; } 73.333% { opacity: 0; } 100% { opacity: 0; } }
+.z7 { opacity: 0; animation: z7 9.0s steps(1,end) infinite; }
+@keyframes z7 { 0% { opacity: 0; } 1.667% { opacity: 1; } 2.444% { opacity: 0; } 3.222% { opacity: 1; } 4.000% { opacity: 0; } 6.333% { opacity: 1; } 7.111% { opacity: 0; } 7.111% { opacity: 1; } 7.889% { opacity: 0; } 7.889% { opacity: 1; } 8.667% { opacity: 0; } 12.556% { opacity: 1; } 13.333% { opacity: 0; } 14.889% { opacity: 1; } 15.667% { opacity: 0; } 17.222% { opacity: 1; } 18.000% { opacity: 0; } 18.000% { opacity: 1; } 18.778% { opacity: 0; } 73.333% { opacity: 1; } 74.111% { opacity: 0; } 78.000% { opacity: 1; } 78.778% { opacity: 0; } 80.333% { opacity: 1; } 81.111% { opacity: 0; } 81.889% { opacity: 1; } 82.667% { opacity: 0; } 82.667% { opacity: 1; } 83.444% { opacity: 0; } 83.444% { opacity: 1; } 83.778% { opacity: 0; } 100% { opacity: 0; } }
+.o7 { opacity: 0; animation: o7 9.0s steps(1,end) infinite; }
+@keyframes o7 { 0% { opacity: 0; } 5.556% { opacity: 1; } 6.333% { opacity: 0; } 8.667% { opacity: 1; } 9.444% { opacity: 0; } 9.444% { opacity: 1; } 10.222% { opacity: 0; } 10.222% { opacity: 1; } 11.000% { opacity: 0; } 11.000% { opacity: 1; } 11.778% { opacity: 0; } 11.778% { opacity: 1; } 12.556% { opacity: 0; } 13.333% { opacity: 1; } 14.111% { opacity: 0; } 14.111% { opacity: 1; } 14.889% { opacity: 0; } 15.667% { opacity: 1; } 16.444% { opacity: 0; } 16.444% { opacity: 1; } 17.222% { opacity: 0; } 74.111% { opacity: 1; } 74.889% { opacity: 0; } 74.889% { opacity: 1; } 75.667% { opacity: 0; } 75.667% { opacity: 1; } 76.444% { opacity: 0; } 76.444% { opacity: 1; } 77.222% { opacity: 0; } 77.222% { opacity: 1; } 78.000% { opacity: 0; } 78.778% { opacity: 1; } 79.556% { opacity: 0; } 79.556% { opacity: 1; } 80.333% { opacity: 0; } 81.111% { opacity: 1; } 81.889% { opacity: 0; } 100% { opacity: 0; } }
+.c7 { opacity: 0; animation: c7 9.0s steps(1,end) infinite; }
+@keyframes c7 { 0% { opacity: 0; } 19.111% { opacity: 1; } 73.333% { opacity: 0; } 100% { opacity: 0; } }
+
     .ga { fill: #ffffff; mix-blend-mode: screen; opacity: 0; animation: ga 5s steps(1) infinite; }
     .gb { fill: #b8860b; mix-blend-mode: screen; opacity: 0; animation: gb 5s steps(1) infinite; }
     @keyframes ga { 0%,100% { opacity: 0; transform: none; }
@@ -29,19 +75,20 @@
     .s2 { opacity: 0; animation: s2 5s steps(1) infinite; }
     @keyframes s1 { 0%,100% { opacity: 0; transform: none; } 70.5% { opacity: 1; transform: translateX(14px); } 72% { opacity: 1; transform: translateX(-9px); } 73% { opacity: 0; transform: none; } }
     @keyframes s2 { 0%,100% { opacity: 0; transform: none; } 71% { opacity: 1; transform: translateX(-16px); } 72.5% { opacity: 0; transform: none; } 88.5% { opacity: 1; transform: translateX(10px); } 89% { opacity: 0; transform: none; } }
-</style>
-  <g clip-path="url(#frame)">
-    <rect width="1200" height="340" fill="url(#bg)"/>
-    <text x="600" y="110" text-anchor="middle" font-family="Consolas,Menlo,monospace" font-size="13" letter-spacing="6" fill="#e8b949" opacity=".55">01110001 01110101 01100101 01111000</text>
-    <g filter="url(#glow)">
+
+    .rule { transform-box: fill-box; transform-origin: center; animation: rule 9.0s cubic-bezier(.2,.7,.2,1) infinite; }
+    @keyframes rule { 0%, 22.00% { transform: scaleX(0); opacity: 0; } 28.00% { transform: scaleX(1); opacity: 1; }
+      71.33% { transform: scaleX(1); opacity: 1; } 76.33%, 100% { transform: scaleX(0); opacity: 0; } }
+    .sub { animation: sub 9.0s ease-out infinite; }
+    @keyframes sub { 0%, 25.00% { opacity: 0; } 32.00% { opacity: .85; } 70.33% { opacity: .85; } 73.33%, 100% { opacity: 0; } }
+  </style>
+  <g filter="url(#glow)">
       <use href="#nm" class="ga"/>
       <use href="#nm" class="gb"/>
       <use href="#nm" fill="url(#gold)"/>
       <use href="#nm" fill="url(#gold)" class="s1" clip-path="url(#c1)"/>
       <use href="#nm" fill="url(#gold)" class="s2" clip-path="url(#c2)"/>
-    </g>
-    <text x="600" y="236" text-anchor="middle" font-family="Consolas,Menlo,monospace" font-size="14" letter-spacing="7" fill="#e6dcc6" opacity=".75">WEB · 3D · ARDUINO · CODE</text>
-    <rect width="1200" height="340" fill="url(#scan)"/>
-    <rect x="1" y="1" width="1198" height="338" rx="21" fill="none" stroke="#e8b949" stroke-opacity=".25"/>
   </g>
+  <rect class="rule" x="150" y="154" width="600" height="1.5" fill="url(#rule)"/>
+  <text class="sub" x="450" y="186" text-anchor="middle" font-family="Consolas,Menlo,monospace" font-size="14" letter-spacing="8" fill="#b9a77e">3D ARTIST · DEVELOPER · SECURITY</text>
 </svg>

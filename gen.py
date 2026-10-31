@@ -194,34 +194,74 @@ terminal = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" wi
 </svg>
 """
 
-banner = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340">
+# --- header: transparent binary -> name decode loop ---
+WORD, L = "QUEXENBP", 9.0            # loop length (s)
+LOCK0, LOCK_STEP, HOLD_END = 0.6, 0.16, 6.6
+TICK = 0.07
+brng = random.Random(3)
+
+def windows_css(name, wins):
+    """steps keyframes: visible only inside (a, b) windows"""
+    p = lambda t: f"{t / L * 100:.3f}%"
+    ks = ["0% { opacity: 0; }"]
+    for a, b in wins:
+        ks.append(f"{p(a)} {{ opacity: 1; }} {p(b)} {{ opacity: 0; }}")
+    ks.append("100% { opacity: 0; }")
+    return (f".{name} {{ opacity: 0; animation: {name} {L}s steps(1,end) infinite; }}\n"
+            f"@keyframes {name} {{ {' '.join(ks)} }}\n")
+
+def scramble(t0, t1, wins):
+    t = t0
+    while t < t1 - 1e-9:
+        g = brng.choice("01 ") if brng.random() < .15 else brng.choice("01")
+        if g != " ":
+            wins[g].append((t, min(t + TICK, t1)))
+        t += TICK
+
+head_css, chars = "", ""
+for i, ch in enumerate(WORD):
+    x = 450 + (i - 3.5) * 74
+    lock = LOCK0 + i * LOCK_STEP
+    out = HOLD_END + 0.45 + i * 0.07
+    wins = {"0": [], "1": []}
+    scramble(0.15, lock, wins)
+    scramble(HOLD_END, out, wins)
+    for g, cls in (("0", f"z{i}"), ("1", f"o{i}")):
+        head_css += windows_css(cls, wins[g])
+        chars += f'<text class="{cls}" x="{x}" y="128" text-anchor="middle">{g}</text>'
+    head_css += windows_css(f"c{i}", [(lock, HOLD_END)])
+    chars += f'<text class="c{i}" x="{x}" y="128" text-anchor="middle">{ch}</text>'
+
+line_t = (LOCK0 + len(WORD) * LOCK_STEP + .1) / L * 100
+end_t = HOLD_END / L * 100
+
+banner = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" width="900" height="220">
   <defs>
-    <radialGradient id="bg" cx="50%" cy="50%" r="75%">
-      <stop offset="0" stop-color="#211a10"/><stop offset=".5" stop-color="#0e0b08"/><stop offset="1" stop-color="#050505"/>
-    </radialGradient>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fff3c4"/><stop offset=".5" stop-color="#e8b949"/><stop offset="1" stop-color="#9c6b1c"/>
+    <linearGradient id="gold" x1="0" y1="60" x2="0" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff3c4"/><stop offset=".55" stop-color="#e8b949"/><stop offset="1" stop-color="#a8741e"/>
     </linearGradient>
-    <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8b949" stop-opacity="0"/><stop offset=".5" stop-color="#e8b949"/><stop offset="1" stop-color="#e8b949" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-10%" y="-60%" width="120%" height="220%">
+      <feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#000" opacity=".4"/></pattern>
-    <clipPath id="frame"><rect width="1200" height="340" rx="22"/></clipPath>
-    <clipPath id="c1"><rect x="0" y="140" width="1200" height="20"/></clipPath>
-    <clipPath id="c2"><rect x="0" y="172" width="1200" height="14"/></clipPath>
-    <text id="nm" x="600" y="190" text-anchor="middle" font-family="'Cascadia Code',Consolas,'SF Mono',Menlo,monospace"
-          font-size="68" font-weight="700" letter-spacing="10">QUEXENBP</text>
+    <clipPath id="c1"><rect x="0" y="80" width="900" height="16"/></clipPath>
+    <clipPath id="c2"><rect x="0" y="108" width="900" height="12"/></clipPath>
+    <g id="nm" font-family="'Cascadia Code',Consolas,'SF Mono',Menlo,monospace" font-size="76" font-weight="700">{chars}</g>
   </defs>
-  <style>{GLITCH_CSS}</style>
-  <g clip-path="url(#frame)">
-    <rect width="1200" height="340" fill="url(#bg)"/>
-    <text x="600" y="110" text-anchor="middle" font-family="Consolas,Menlo,monospace" font-size="13" letter-spacing="6" fill="#e8b949" opacity=".55">01110001 01110101 01100101 01111000</text>
-    <g filter="url(#glow)">{glitch_stack("nm", "url(#gold)", "c1", "c2")}
-    </g>
-    <text x="600" y="236" text-anchor="middle" font-family="Consolas,Menlo,monospace" font-size="14" letter-spacing="7" fill="#e6dcc6" opacity=".75">WEB · 3D · ARDUINO · CODE</text>
-    <rect width="1200" height="340" fill="url(#scan)"/>
-    <rect x="1" y="1" width="1198" height="338" rx="21" fill="none" stroke="#e8b949" stroke-opacity=".25"/>
+  <style>
+{head_css}{GLITCH_CSS}
+    .rule {{ transform-box: fill-box; transform-origin: center; animation: rule {L}s cubic-bezier(.2,.7,.2,1) infinite; }}
+    @keyframes rule {{ 0%, {line_t:.2f}% {{ transform: scaleX(0); opacity: 0; }} {line_t + 6:.2f}% {{ transform: scaleX(1); opacity: 1; }}
+      {end_t - 2:.2f}% {{ transform: scaleX(1); opacity: 1; }} {end_t + 3:.2f}%, 100% {{ transform: scaleX(0); opacity: 0; }} }}
+    .sub {{ animation: sub {L}s ease-out infinite; }}
+    @keyframes sub {{ 0%, {line_t + 3:.2f}% {{ opacity: 0; }} {line_t + 10:.2f}% {{ opacity: .85; }} {end_t - 3:.2f}% {{ opacity: .85; }} {end_t:.2f}%, 100% {{ opacity: 0; }} }}
+  </style>
+  <g filter="url(#glow)">{glitch_stack("nm", "url(#gold)", "c1", "c2")}
   </g>
+  <rect class="rule" x="150" y="154" width="600" height="1.5" fill="url(#rule)"/>
+  <text class="sub" x="450" y="186" text-anchor="middle" font-family="Consolas,Menlo,monospace" font-size="14" letter-spacing="8" fill="#b9a77e">3D ARTIST · DEVELOPER · SECURITY</text>
 </svg>
 """
 
