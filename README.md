@@ -4,7 +4,7 @@
 
 ---
 
-<h3 align="center">🕸️ whoami</h3>
+<h3 align="center">whoami</h3>
 
 <p align="center">
   <img src="terminal.svg" width="100%" />
@@ -17,7 +17,7 @@ Most of my projects start as a <i>"what if"</i> and end up half-finished but pre
 
 ---
 
-<h3 align="center">🛠️ technologies</h3>
+<h3 align="center">tech</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-0d0d0d?style=for-the-badge&logo=html5&logoColor=e8b949" />
@@ -26,16 +26,22 @@ Most of my projects start as a <i>"what if"</i> and end up half-finished but pre
   <img src="https://img.shields.io/badge/C++-0d0d0d?style=for-the-badge&logo=cplusplus&logoColor=e8b949" />
   <img src="https://img.shields.io/badge/Python-0d0d0d?style=for-the-badge&logo=python&logoColor=e8b949" />
   <br/>
+  <img src="https://img.shields.io/badge/Rust-0d0d0d?style=for-the-badge&logo=rust&logoColor=e8b949" />
+  <img src="https://img.shields.io/badge/PHP-0d0d0d?style=for-the-badge&logo=php&logoColor=e8b949" />
+  <img src="https://img.shields.io/badge/Java-0d0d0d?style=for-the-badge&logo=openjdk&logoColor=e8b949" />
+  <img src="https://img.shields.io/badge/C%23-0d0d0d?style=for-the-badge&logo=dotnet&logoColor=e8b949" />
+  <br/>
   <img src="https://img.shields.io/badge/Arduino-0d0d0d?style=for-the-badge&logo=arduino&logoColor=e8b949" />
   <img src="https://img.shields.io/badge/Blender-0d0d0d?style=for-the-badge&logo=blender&logoColor=e8b949" />
   <img src="https://img.shields.io/badge/Figma-0d0d0d?style=for-the-badge&logo=figma&logoColor=e8b949" />
   <img src="https://img.shields.io/badge/Git-0d0d0d?style=for-the-badge&logo=git&logoColor=e8b949" />
   <img src="https://img.shields.io/badge/Shopify-0d0d0d?style=for-the-badge&logo=shopify&logoColor=e8b949" />
+  <img src="https://img.shields.io/badge/%C4%B0kas-0d0d0d?style=for-the-badge&labelColor=0d0d0d&color=0d0d0d" />
 </p>
 
 ---
 
-<h3 align="center">📈 statistics</h3>
+<h3 align="center">statistics</h3>
 
 <p align="center">
   <img height="170" src="https://github-readme-stats.vercel.app/api?username=quexenbp&show_icons=true&count_private=true&include_all_commits=true&hide_border=true&bg_color=0d1117&title_color=e8b949&icon_color=e8b949&text_color=e6edf3&ring_color=e8b949" />
